@@ -1,0 +1,145 @@
+export type Identity = 'self' | 'friend';
+
+export interface Member {
+  id: number;
+  name: string;
+  identity: Identity;
+  moodTagId: string;        // 来自 mood_tags
+  single: boolean;          // true=单身
+  online: boolean;          // true=在线
+  interests: string[];      // interest_tags 的 tagId 列表
+  avatar?: string;          // 头像占位
+}
+
+export const members: Member[] = [
+  {
+    id: 1,
+    name: '郭辛福',
+    identity: 'self',
+    moodTagId: '1978738801687379969',
+    single: true,
+    online: true,
+    interests: ["1963995282228748744", "1963995282228748746", "1963995282228748772"],
+    avatar: '/avatars/1.jpeg',
+  },
+  {
+    id: 2,
+    name: '李程',
+    identity: 'friend',
+    moodTagId: '1978738801687379969',
+    single: false,
+    online: true,
+    interests: ["1963995282228748690", "1963995282228748752", "1963995282228748696"],
+    avatar: '/avatars/2.jpeg',
+  },
+  {
+    id: 3,
+    name: '王琪',
+    identity: 'friend',
+    moodTagId: '1978738801687379969',
+    single: true,
+    online: false,
+    interests: ["1963995282228748692", "1963995282228748749", "1963995282228748756"],
+    avatar: '/avatars/3.jpeg',
+  },
+  {
+    id: 4,
+    name: '赵一帆',
+    identity: 'friend',
+    moodTagId: '1978738916397400066',
+    single: false,
+    online: true,
+    interests: ["1963995282228748686", "1963995282228748753", "1963995282228748768"],
+    avatar: '/avatars/4.jpeg',
+  },
+  {
+    id: 5,
+    name: '陈思远',
+    identity: 'friend',
+    moodTagId: '1978739446985244673',
+    single: true,
+    online: false,
+    interests: ["1963995282228748761", "1963995282228748751", "1963995282228748769"],
+    avatar: '/avatars/5.jpeg',
+  },
+  {
+    id: 6,
+    name: '刘悦',
+    identity: 'friend',
+    moodTagId: '1978738866464210945',
+    single: false,
+    online: true,
+    interests: ["1963995282228748750", "1963995282228748745", "1963995282228748739"],
+    avatar: '/avatars/6.jpeg',
+  },
+  {
+    id: 7,
+    name: '周正',
+    identity: 'friend',
+    moodTagId: '1978741082822524929',
+    single: true,
+    online: true,
+    interests: ["1963995282228748759", "1963995282228748748", "1963995282228748735"],
+    avatar: '/avatars/7.jpeg',
+  },
+  {
+    id: 8,
+    name: '吴倩',
+    identity: 'friend',
+    moodTagId: '1978738866464210945',
+    single: true,
+    online: false,
+    interests: ["1963995282228748758", "1963995282228748754", "1963995282228748763"],
+    avatar: '/avatars/8.jpeg',
+  },
+  {
+    id: 9,
+    name: '孙浩',
+    identity: 'friend',
+    moodTagId: '1978738916397400066',
+    single: false,
+    online: true,
+    interests: ["1963995282228748760", "1963995282228748681", "1963995282228748747"],
+    avatar: '/avatars/9.jpeg',
+  },
+  {
+    id: 10,
+    name: '马珊',
+    identity: 'friend',
+    moodTagId: '1978739446985244673',
+    single: true,
+    online: false,
+    interests: ["1963995282228748741", "1963995282228748738", "1963995282228748767"],
+    avatar: '/avatars/10.jpeg',
+  },
+  {
+    id: 11,
+    name: '郑凯',
+    identity: 'friend',
+    moodTagId: '1978738866464210945',
+    single: false,
+    online: true,
+    interests: ["1963995282228748743", "1963995282228748766", "1963995282228748685"],
+    avatar: '/avatars/11.jpeg',
+  },
+  {
+    id: 12,
+    name: '唐婧',
+    identity: 'friend',
+    moodTagId: '1978741082822524929',
+    single: true,
+    online: true,
+    interests: ["1963995282228748756", "1963995282228748749", "1963995282228748698"],
+    avatar: '/avatars/12.jpeg',
+  },
+  {
+    id: 13,
+    name: '曹宁',
+    identity: 'friend',
+    moodTagId: '1978738801687379969',
+    single: false,
+    online: false,
+    interests: ["1963995282228748742", "1963995282228748764", "1963995282228748683"],
+    avatar: '/avatars/13.jpeg',
+  },
+];
