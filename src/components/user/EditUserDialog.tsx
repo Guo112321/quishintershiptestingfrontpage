@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { tagGroups } from "@/data/data";
-import { getMoodById } from "@/lib/tagLookup";
+import { getInterestById, getMoodById } from "@/lib/tagLookup";
 import { useUsers } from "@/lib/users";
 
 type Props = { open: boolean; onClose: () => void; userId: number };
@@ -45,6 +45,11 @@ export default function EditUserDialog({ open, onClose, userId }: Props) {
     setSingle(user.single);
     setOnline(user.online);
   }, [open, user]);
+
+  const primaryInterest = useMemo(
+    () => (interests[0] ? getInterestById(interests[0]) : undefined),
+    [interests]
+  );
 
   if (!open || !user) return null;
 
@@ -199,9 +204,9 @@ export default function EditUserDialog({ open, onClose, userId }: Props) {
             {/* 当前首选展示 */}
             <div className="mt-2 text-xs text-gray-500">
               首选用于侧边栏展示的第一条兴趣。
-              {interests[0] && (
+              {primaryInterest && (
                 <span className="ml-2 inline-block px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                  当前首选：{interests[0]}
+                  当前首选：{primaryInterest.tagName}
                 </span>
               )}
             </div>
